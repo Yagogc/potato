@@ -5,6 +5,8 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import { injectGlobal } from "styled-components";
 
+import bg from "./bg.svg";
+
 ReactDOM.render(<App />, document.getElementById("root"));
 registerServiceWorker();
 
@@ -18,5 +20,10 @@ injectGlobal`
 	}
 	html {
 		background: #f1f1f1;
+    background-color: #ffe7d1;
+    background-image: url(${bg});
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 	}
 `;
