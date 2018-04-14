@@ -9,7 +9,7 @@ class App extends Component {
     items: ""
   };
   componentDidMount() {
-    let items;
+    const self = this;
     fetchJsonp(
       "https://api.flickr.com/services/feeds/photos_public.gne?tags=potato&tagmode=all&format=json",
       {
@@ -21,21 +21,22 @@ class App extends Component {
       })
       .then(function(json) {
         console.log("parsed json", json.items);
-        items = json.items;
+        self.setState({
+          items: json.items
+        });
       })
       .catch(function(ex) {
         console.log("parsing failed", ex);
       });
-    this.setState({
-      items: items
-    });
   }
 
   render() {
+    const { items } = this.state;
+    console.log("render", items);
     return (
       <React.Fragment>
         <Header />
-        <Home items="{this.state.items}" />
+        <Home items={items} />
       </React.Fragment>
     );
   }

@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import Container from "./../ui/Container";
+import HeaderWrapper from "./../ui/HeaderWrapper";
 
 class Header extends Component {
   render() {
     return (
-      <nav>
-        <Container>Test</Container>
-      </nav>
+      <HeaderWrapper>
+        <Container>Potato Gallery</Container>
+      </HeaderWrapper>
     );
   }
 }
