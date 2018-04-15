@@ -30,6 +30,8 @@ export const CardDetails = styled.div`
   flex-grow: 1;
   padding: 15px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   @media (min-width: 800px) {
   }
 `;
@@ -39,7 +41,9 @@ export const CardTitle = styled.h2`
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 10px;
+  order: 1;
   @media (min-width: 800px) {
+    order: auto;
   }
 `;
 
@@ -49,13 +53,20 @@ export const CardDate = styled.span`
   margin-bottom: 10px;
   font-style: italic;
   font-size: 12px;
+  margin-right: 10px;
+  order: 2;
   @media (min-width: 800px) {
+    display: inline-block;
+    width: auto;
+    order: auto;
   }
 `;
 
 export const CardLinks = styled.a`
   margin-right: 10px;
   font-size: 12px;
+  order: 3;
   @media (min-width: 800px) {
+    order: auto;
   }
 `;

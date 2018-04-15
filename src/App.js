@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
 import fetchJsonp from "fetch-jsonp";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import Photo from "./pages/Photo";
+import NotFound from "./pages/NotFound";
 
 class App extends Component {
   state = {
@@ -32,12 +36,25 @@ class App extends Component {
 
   render() {
     const { items } = this.state;
-    console.log("render", items);
     return (
-      <React.Fragment>
-        <Header />
-        <Home items={items} />
-      </React.Fragment>
+      <Router>
+        <React.Fragment>
+          <Header />
+          {/* <Home items={items} /> */}
+          <Switch>
+            <Route
+              exact
+              path="/"
+              component={props => <Home items={items} {...props} />}
+            />
+            <Route
+              path="/photo/:id"
+              component={props => <Photo items={items} {...props} />}
+            />
+            <Route component={NotFound} />
+          </Switch>
+        </React.Fragment>
+      </Router>
     );
   }
 }

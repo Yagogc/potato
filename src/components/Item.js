@@ -18,10 +18,10 @@ class Item extends Component {
         <CardImg bg={item.media.m} />
         <CardDetails>
           <CardTitle>{item.title}</CardTitle>
-          <CardDate>Published: {formatedDate(item.published)}</CardDate>
           <CardLinks href={"//www.flickr.com/people/" + item.author_id}>
             View Author
           </CardLinks>
+          <CardDate>Published: {formatedDate(item.published)}</CardDate>
           <CardLinks href={item.link}>View in Flicker</CardLinks>
         </CardDetails>
       </Card>
