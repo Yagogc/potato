@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import Container from "./../ui/Container";
-import HeaderWrapper from "./../ui/HeaderWrapper";
-
+import { Header as HeaderWrapper, Logo } from "./../ui/Header";
+import logo from "../potato.svg";
 class Header extends Component {
   render() {
     return (
       <HeaderWrapper>
-        <Container>Potato Gallery</Container>
+        <Container>
+          <Logo src={logo} alt="logo" /> Potato Gallery
+        </Container>
       </HeaderWrapper>
     );
   }
