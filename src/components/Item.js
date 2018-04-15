@@ -9,15 +9,18 @@ import {
 } from "./../ui/Card";
 
 import formatedDate from "../utils/date";
+import { Link } from "react-router-dom";
 
 class Item extends Component {
   render() {
-    const { item } = this.props;
+    const { item, id } = this.props;
     return (
       <Card>
         <CardImg bg={item.media.m} />
         <CardDetails>
-          <CardTitle>{item.title}</CardTitle>
+          <Link to={`/photo/${id}`}>
+            <CardTitle>{item.title}</CardTitle>
+          </Link>
           <CardLinks href={"//www.flickr.com/people/" + item.author_id}>
             View Author
           </CardLinks>

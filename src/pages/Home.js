@@ -9,7 +9,7 @@ class Home extends Component {
     return (
       <main>
         <Container>
-          {items && items.map((item, i) => <Item item={item} key={i} />)}
+          {items && items.map((item, i) => <Item item={item} id={i} key={i} />)}
         </Container>
       </main>
     );
