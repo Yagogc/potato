@@ -8,7 +8,7 @@ import {
   CardLinks
 } from "./../ui/Card";
 
-import moment from "moment";
+import formatedDate from "../utils/date";
 
 class Item extends Component {
   render() {
@@ -18,10 +18,7 @@ class Item extends Component {
         <CardImg bg={item.media.m} />
         <CardDetails>
           <CardTitle>{item.title}</CardTitle>
-          <CardDate>
-            Published:
-            {moment(item.published).format(" Do MMMM YY [at] HH:MM")}
-          </CardDate>
+          <CardDate>Published: {formatedDate(item.published)}</CardDate>
           <CardLinks href={"//www.flickr.com/people/" + item.author_id}>
             View Author
           </CardLinks>
