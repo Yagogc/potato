@@ -16,7 +16,9 @@ class Item extends Component {
     const { item, id } = this.props;
     return (
       <Card>
-        <CardImg bg={item.media.m} />
+        <Link to={`/photo/${id}`}>
+          <CardImg bg={item.media.m} />
+        </Link>
         <CardDetails>
           <Link to={`/photo/${id}`}>
             <CardTitle>{item.title}</CardTitle>

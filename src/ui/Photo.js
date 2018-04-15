@@ -1,16 +1,15 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Photo = styled.article`
   width: 100%;
   background: white;
-  display: flex;
   padding: 15px;
   margin-bottom: 15px;
   border-radius: 3px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 0px;
   transition: all 0.2s ease-in-out;
-  flex-direction: column;
   @media (min-width: 800px) {
     &:hover {
       box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 2px;
@@ -18,31 +17,61 @@ export const Photo = styled.article`
   }
 `;
 
-export const PhotoImg = styled.div`
-  background-image: url(${props => (props.bg ? props.bg : "")});
-  min-width: 100px;
-  background-size: cover;
-  background-position: center;
+export const PhotoImg = styled.img`
+  align-self: flex-start;
+  max-width: 100%;
+  margin: 0 auto 15px;
   @media (min-width: 800px) {
-    min-width: 150px;
+    max-width: 200px;
   }
 `;
 
 export const PhotoDetails = styled.div`
-  flex-grow: 1;
-  padding: 15px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   @media (min-width: 800px) {
+    flex-direction: row;
+  }
+`;
+export const PhotoDesc = styled.div`
+  p {
+    margin-bottom: 15px;
+  }
+  @media (min-width: 800px) {
+    margin-left: 15px;
   }
 `;
 
-export const PhotoTitle = styled.h2`
+export const PhotoHeader = styled.div`
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
+`;
+
+export const PhotoTitle = styled.a`
+  font-size: 20px;
+  text-decoration: none;
+  flex-grow: 1;
+  margin-bottom: 15px;
+  @media (min-width: 800px) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    order: auto;
+  }
+`;
+export const PhotoBack = styled(Link)`
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
   margin-bottom: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  align-self: flex-end;
   @media (min-width: 800px) {
     order: auto;
   }
@@ -55,7 +84,6 @@ export const PhotoDate = styled.span`
   font-style: italic;
   font-size: 12px;
   margin-right: 10px;
-  order: 2;
   @media (min-width: 800px) {
     display: inline-block;
     width: auto;
@@ -64,9 +92,23 @@ export const PhotoDate = styled.span`
 `;
 
 export const PhotoLinks = styled.a`
-  margin-right: 10px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 10px;
   font-size: 12px;
-  order: 3;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    height: 80%;
+    transform: translateY(-50%);
+    width: 1px;
+    background: black;
+    opacity: 0.3;
+  }
   @media (min-width: 800px) {
     order: auto;
   }

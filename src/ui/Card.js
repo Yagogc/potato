@@ -19,6 +19,7 @@ export const Card = styled.article`
 export const CardImg = styled.div`
   background-image: url(${props => (props.bg ? props.bg : "")});
   min-width: 100px;
+  min-height: 100%;
   background-size: cover;
   background-position: center;
   @media (min-width: 800px) {
