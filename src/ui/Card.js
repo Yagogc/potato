@@ -18,16 +18,17 @@ export const Card = styled.article`
 
 export const CardImg = styled.div`
   background-image: url(${props => (props.bg ? props.bg : "")});
-  min-width: 150px;
+  min-width: 100px;
   background-size: cover;
   background-position: center;
   @media (min-width: 800px) {
+    min-width: 150px;
   }
 `;
 
 export const CardDetails = styled.div`
   flex-grow: 1;
-  padding: 5px;
+  padding: 15px;
   overflow: hidden;
   @media (min-width: 800px) {
   }
@@ -37,6 +38,7 @@ export const CardTitle = styled.h2`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 10px;
   @media (min-width: 800px) {
   }
 `;
@@ -44,11 +46,16 @@ export const CardTitle = styled.h2`
 export const CardDate = styled.span`
   width: 100%;
   display: block;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-size: 12px;
   @media (min-width: 800px) {
   }
 `;
 
 export const CardLinks = styled.a`
+  margin-right: 10px;
+  font-size: 12px;
   @media (min-width: 800px) {
   }
 `;
