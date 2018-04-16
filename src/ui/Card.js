@@ -4,14 +4,13 @@ export const Card = styled.article`
   width: 100%;
   background: white;
   display: flex;
-  margin-bottom: 15px;
-  border-radius: 3px;
+  margin: 15px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 4px;
   transition: all 0.2s ease-in-out;
   @media (min-width: 800px) {
     &:hover {
-      box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 2px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 0 0 4px;
     }
   }
 `;
@@ -33,6 +32,10 @@ export const CardDetails = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
+  > div {
+    display: flex;
+  }
   @media (min-width: 800px) {
   }
 `;

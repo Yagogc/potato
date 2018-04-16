@@ -23,11 +23,13 @@ class Item extends Component {
           <Link to={`/photo/${id}`}>
             <CardTitle>{item.title}</CardTitle>
           </Link>
-          <CardLinks href={"//www.flickr.com/people/" + item.author_id}>
-            View Author
-          </CardLinks>
-          <CardDate>Published: {formatedDate(item.published)}</CardDate>
-          <CardLinks href={item.link}>View in Flicker</CardLinks>
+          <div>
+            <CardLinks href={"//www.flickr.com/people/" + item.author_id}>
+              View Author
+            </CardLinks>
+            <CardDate>Published: {formatedDate(item.published)}</CardDate>
+            <CardLinks href={item.link}>View in Flicker</CardLinks>
+          </div>
         </CardDetails>
       </Card>
     );

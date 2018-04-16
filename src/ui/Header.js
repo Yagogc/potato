@@ -3,10 +3,10 @@ import Container from "./Container";
 
 const logoAnim = keyframes`
   0 {
-    transform: rotate(-25deg);
+    transform: rotate(-20deg);
   }
   50% {
-    transform: rotate(25deg);
+    transform: rotate(20deg);
   }
 `;
 
@@ -28,6 +28,7 @@ export const Header = styled.header`
 export const Logo = styled.img`
   display: inline-block;
   height: 30px;
-  margin-right: 10px;
-  animation: ${logoAnim} 3s linear infinite;
+  margin-right: 15px;
+  animation: ${logoAnim} 5s linear infinite;
+  transform-origin: bottom;
 `;
