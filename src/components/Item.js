@@ -2,27 +2,28 @@ import React, { Component } from "react";
 import {
   Card,
   CardImg,
+  CardLink,
   CardDetails,
   CardTitle,
   CardDate,
-  CardLinks
+  CardLinks,
+  CardHeader
 } from "./../ui/Card";
 
 import formatedDate from "../utils/date";
-import { Link } from "react-router-dom";
 
 class Item extends Component {
   render() {
     const { item, id } = this.props;
     return (
       <Card>
-        <Link to={`/photo/${id}`}>
-          <CardImg bg={item.media.m} />
-        </Link>
+        <CardImg to={`/photo/${id}`} bg={item.media.m} />
         <CardDetails>
-          <Link to={`/photo/${id}`}>
-            <CardTitle>{item.title}</CardTitle>
-          </Link>
+          <CardHeader>
+            <CardLink to={`/photo/${id}`}>
+              <CardTitle>{item.title}</CardTitle>
+            </CardLink>
+          </CardHeader>
           <div>
             <CardLinks href={"//www.flickr.com/people/" + item.author_id}>
               View Author
