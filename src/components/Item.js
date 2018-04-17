@@ -11,7 +11,7 @@ import {
 } from "./../ui/Card";
 
 import formatedDate from "../utils/date";
-
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 class Item extends Component {
   render() {
     const { item, id } = this.props;
@@ -26,10 +26,12 @@ class Item extends Component {
           </CardHeader>
           <div>
             <CardLinks href={"//www.flickr.com/people/" + item.author_id}>
-              View Author
+              View Author <FontAwesomeIcon icon="external-link-alt" />
             </CardLinks>
             <CardDate>Published: {formatedDate(item.published)}</CardDate>
-            <CardLinks href={item.link}>View in Flicker</CardLinks>
+            <CardLinks href={item.link}>
+              View in Flicker <FontAwesomeIcon icon="external-link-alt" />
+            </CardLinks>
           </div>
         </CardDetails>
       </Card>

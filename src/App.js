@@ -2,12 +2,19 @@ import React, { Component } from "react";
 
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
+import fontawesome from "@fortawesome/fontawesome";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+import faExternalLinkAlt from "@fortawesome/fontawesome-free-solid/faExternalLinkAlt";
+import faChevronLeft from "@fortawesome/fontawesome-free-solid/faChevronLeft";
+import faTags from "@fortawesome/fontawesome-free-solid/faTags";
+
 import fetchJsonp from "fetch-jsonp";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Photo from "./pages/Photo";
 import NotFound from "./pages/NotFound";
 
+fontawesome.library.add(faExternalLinkAlt, faChevronLeft, faTags);
 class App extends Component {
   state = {
     items: ""

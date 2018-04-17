@@ -108,16 +108,23 @@ export const CardLinks = styled.a`
   color: rebeccapurple;
   font-weight: bold;
 
-  &:after {
-    content: "";
-    position: absolute;
-    background: rebeccapurple;
-    width: 100%;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-  }
   @media (min-width: 800px) {
     order: auto;
+    &:after {
+      content: "";
+      position: absolute;
+      background: rebeccapurple;
+      width: 100%;
+      max-width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      transition: max-width 0.2s ease-in-out;
+    }
+    &:hover {
+      &:after {
+        max-width: 100%;
+      }
+    }
   }
 `;

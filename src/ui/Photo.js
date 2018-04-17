@@ -97,19 +97,37 @@ export const PhotoLinks = styled.a`
   margin-bottom: 10px;
   font-size: 12px;
   position: relative;
+  text-decoration: none;
+  color: rebeccapurple;
 
-  &:after {
-    content: "";
-    position: absolute;
-    right: -10px;
-    top: 50%;
-    height: 80%;
-    transform: translateY(-50%);
-    width: 1px;
-    background: black;
-    opacity: 0.3;
-  }
   @media (min-width: 800px) {
     order: auto;
+    &:after {
+      content: "";
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      height: 80%;
+      transform: translateY(-50%);
+      width: 1px;
+      background: black;
+      opacity: 0.3;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      background: rebeccapurple;
+      width: 100%;
+      max-width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      transition: max-width 0.2s ease-in-out;
+    }
+    &:hover {
+      &:before {
+        max-width: 100%;
+      }
+    }
   }
 `;

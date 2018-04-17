@@ -13,6 +13,10 @@ import {
 } from "../ui/Photo";
 import formatedDate from "../utils/date";
 import { PhotoDetails } from "./../ui/Photo";
+import Tags from "./../components/Tags";
+
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
+
 class Photo extends Component {
   render() {
     const { id } = this.props.match.params;
@@ -26,11 +30,15 @@ class Photo extends Component {
           {item && (
             <PhotoWrapper>
               <PhotoHeader>
-                <PhotoTitle href={item.link}> {item.title}</PhotoTitle>
-                <PhotoBack to="/">⬅️ Back</PhotoBack>
+                <PhotoTitle href={item.link}>
+                  <FontAwesomeIcon icon="external-link-alt" /> {item.title}
+                </PhotoTitle>
+                <PhotoBack to="/">
+                  <FontAwesomeIcon icon="chevron-left" /> Back
+                </PhotoBack>
               </PhotoHeader>
               <PhotoLinks href={"//www.flickr.com/people/" + item.author_id}>
-                View Author
+                View Author <FontAwesomeIcon icon="external-link-alt" />
               </PhotoLinks>
               <PhotoDate>Published: {formatedDate(item.published)}</PhotoDate>
               <PhotoDetails>
@@ -55,7 +63,7 @@ class Photo extends Component {
                     elementum felis. Duis fringilla nunc nisi. Nulla nec aliquet
                     neque, et ultrices felis.
                   </p>
-                  Tags: {item.tags}
+                  <Tags tags={item.tags} />
                 </PhotoDesc>
               </PhotoDetails>
             </PhotoWrapper>
