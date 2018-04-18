@@ -6,13 +6,12 @@ export const Photo = styled.article`
   background: white;
   padding: 15px;
   margin-bottom: 15px;
-  border-radius: 3px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 4px;
   transition: all 0.2s ease-in-out;
   @media (min-width: 800px) {
     &:hover {
-      box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 2px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 0 0 4px;
     }
   }
 `;
@@ -58,6 +57,11 @@ export const PhotoTitle = styled.a`
   text-decoration: none;
   flex-grow: 1;
   margin-bottom: 15px;
+  color: black;
+  font-size: 1.5rem;
+  &:hover {
+    color: rebeccapurple;
+  }
   @media (min-width: 800px) {
     white-space: nowrap;
     overflow: hidden;
