@@ -110,7 +110,6 @@ This project was tested with:
 * Chrome (Version 64) ✔️
 * Chrome for Android (Version 64) ✔️ (PWA Compliant)
 * Firefox (Version 58) ✔️
-* IE 11 ✔️
 * Edge 16 ✔️
 * Safari 11 ✔️
 * IOS Safari 11 ✔️
