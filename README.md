@@ -9,6 +9,7 @@ The stack choosed for this project is:
 * Unit Test: [Jest](https://facebook.github.io/jest/)
 * UI Snapshot Test: [Jest Styled Components](https://github.com/styled-components/jest-styled-components)
 * E2E Test: [Cypress](https://www.cypress.io/)
+* Linting & Formatting: [Eslint](https://eslint.org/) + [Prettier](https://prettier.io/)
 
 The project was created with [Create React App](https://github.com/facebookincubator/create-react-app).
 
@@ -132,3 +133,4 @@ Besides the dependencies of React (via [Create React App](https://github.com/fac
 * [eslint-plugin-cypress](https://github.com/cypress-io/eslint-plugin-cypress)
 * [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
 * [react-test-renderer](https://www.npmjs.com/package/react-test-renderer)
+* [react-lorem-component](https://github.com/martinandert/react-lorem-component)
