@@ -1,18 +1,19 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { PhotoLinks } from "./Photo";
+import { color, spacing, fontSize } from "./variables";
 
 export const Card = styled.article`
   width: 100%;
   background: white;
   display: flex;
-  margin: 15px 0;
+  margin: ${spacing.margin} 0;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 4px;
+  box-shadow: ${color.shadow01} 0 0 0 4px;
   transition: all 0.2s ease-in-out;
   @media (min-width: 800px) {
     &:hover {
-      box-shadow: rgba(0, 0, 0, 0.3) 0 0 0 4px;
+      box-shadow: ${color.shadow02} 0 0 0 4px;
     }
   }
 `;
@@ -23,7 +24,7 @@ export const CardImg = styled(Link)`
   min-height: 100%;
   background-size: cover;
   background-position: center;
-  box-shadow: inset rgba(0, 0, 0, 0.5) -5px 0 4px -3px;
+  box-shadow: inset ${color.shadow03} -5px 0 4px -3px;
   @media (min-width: 800px) {
     min-width: 150px;
   }
@@ -31,17 +32,17 @@ export const CardImg = styled(Link)`
 
 export const CardLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: ${color.text01};
   transition: color 0.2s ease;
   overflow: hidden;
   &:hover {
-    color: rebeccapurple;
+    color: ${color.text03};
   }
 `;
 
 export const CardDetails = styled.div`
   flex-grow: 1;
-  padding: 15px;
+  padding: ${spacing.padding};
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -59,7 +60,7 @@ export const CardHeader = styled.div`
   &:after {
     content: "";
     position: absolute;
-    background: #f4ebff;
+    background: ${color.ui02};
     width: calc(100% + 45px);
     height: calc(100% + 30px);
     top: -35px;
@@ -75,7 +76,7 @@ export const CardTitle = styled.h2`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 15px;
+  margin-bottom: ${spacing.margin};
   position: relative;
   z-index: 2;
   @media (min-width: 800px) {
@@ -101,11 +102,11 @@ export const CardDate = styled.span`
 
 export const CardLinks = styled.a`
   margin-right: 10px;
-  font-size: 12px;
+  font-size: ${fontSize.small};
   order: 3;
   text-decoration: none;
   position: relative;
-  color: rebeccapurple;
+  color: ${color.text01};
   font-weight: bold;
 
   @media (min-width: 800px) {
@@ -113,7 +114,7 @@ export const CardLinks = styled.a`
     &:after {
       content: "";
       position: absolute;
-      background: rebeccapurple;
+      background: ${color.text03};
       width: 100%;
       max-width: 0;
       height: 1px;
@@ -122,6 +123,7 @@ export const CardLinks = styled.a`
       transition: max-width 0.2s ease-in-out;
     }
     &:hover {
+      color: ${color.text03};
       &:after {
         max-width: 100%;
       }

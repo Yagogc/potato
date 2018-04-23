@@ -30,9 +30,7 @@ class Photo extends Component {
           {item && (
             <PhotoWrapper>
               <PhotoHeader>
-                <PhotoTitle href={item.link}>
-                  <FontAwesomeIcon icon="external-link-alt" /> {item.title}
-                </PhotoTitle>
+                <PhotoTitle href={item.link}>{item.title}</PhotoTitle>
                 <PhotoBack to="/">
                   <FontAwesomeIcon icon="chevron-left" /> Back
                 </PhotoBack>

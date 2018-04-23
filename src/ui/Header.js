@@ -1,6 +1,8 @@
 import styled, { keyframes } from "styled-components";
 import Container from "./Container";
 
+import { spacing, fontSize, color } from "./variables";
+
 const logoAnim = keyframes`
   0 {
     transform: rotate(-20deg);
@@ -12,11 +14,7 @@ const logoAnim = keyframes`
 
 export const Header = styled.header`
   background-color: #2c242e;
-  color: white;
   text-align: center;
-  font-weight: bold;
-  font-size: 20px;
-  max-height: 50px;
   ${Container} {
     max-height: 50px;
     display: flex;
@@ -25,10 +23,17 @@ export const Header = styled.header`
   }
 `;
 
-export const Logo = styled.img`
+export const HeaderLogo = styled.img`
   display: inline-block;
   height: 30px;
-  margin-right: 15px;
+  margin-right: ${spacing.margin};
   animation: ${logoAnim} 5s linear infinite;
   transform-origin: bottom;
+`;
+
+export const HeaderTitle = styled.h1`
+  font-weight: bold;
+  font-size: ${fontSize.big};
+  max-height: 50px;
+  color: ${color.brand01};
 `;

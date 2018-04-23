@@ -1,17 +1,18 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { color, spacing, fontSize } from "./variables";
 
 export const Photo = styled.article`
   width: 100%;
   background: white;
-  padding: 15px;
-  margin-bottom: 15px;
+  padding: ${spacing.padding};
+  margin-bottom: ${spacing.margin};
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 4px;
+  box-shadow: ${color.shadow01} 0 0 0 4px;
   transition: all 0.2s ease-in-out;
   @media (min-width: 800px) {
     &:hover {
-      box-shadow: rgba(0, 0, 0, 0.3) 0 0 0 4px;
+      box-shadow: ${color.shadow02} 0 0 0 4px;
     }
   }
 `;
@@ -19,7 +20,7 @@ export const Photo = styled.article`
 export const PhotoImg = styled.img`
   align-self: flex-start;
   max-width: 100%;
-  margin: 0 auto 15px;
+  margin: 0 auto ${spacing.margin};
   @media (min-width: 800px) {
     max-width: 200px;
   }
@@ -35,10 +36,11 @@ export const PhotoDetails = styled.div`
 `;
 export const PhotoDesc = styled.div`
   p {
-    margin-bottom: 15px;
+    color: ${color.text01};
+    margin-bottom: ${spacing.margin};
   }
   @media (min-width: 800px) {
-    margin-left: 15px;
+    margin-left: ${spacing.margin};
   }
 `;
 
@@ -53,14 +55,14 @@ export const PhotoHeader = styled.div`
 `;
 
 export const PhotoTitle = styled.a`
-  font-size: 20px;
   text-decoration: none;
   flex-grow: 1;
-  margin-bottom: 15px;
+  margin-bottom: ${spacing.margin};
   color: black;
-  font-size: 1.5rem;
+  font-size: ${fontSize.big};
+  color: ${color.text01};
   &:hover {
-    color: rebeccapurple;
+    color: ${color.text03};
   }
   @media (min-width: 800px) {
     white-space: nowrap;
@@ -70,24 +72,29 @@ export const PhotoTitle = styled.a`
   }
 `;
 export const PhotoBack = styled(Link)`
+  color: ${color.text01};
   white-space: nowrap;
   overflow: hidden;
-  margin-bottom: 10px;
-  font-size: 20px;
+  margin-bottom: ${spacing.margin};
+  margin-left: ${spacing.margin};
+  font-size: ${fontSize.big};
   text-decoration: none;
   align-self: flex-end;
   @media (min-width: 800px) {
     order: auto;
+    &:hover {
+      color: ${color.text03};
+    }
   }
 `;
 
 export const PhotoDate = styled.span`
   width: 100%;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: ${spacing.margin};
   font-style: italic;
-  font-size: 12px;
-  margin-right: 10px;
+  font-size: ${fontSize.small};
+  color: ${color.text01};
   @media (min-width: 800px) {
     display: inline-block;
     width: auto;
@@ -98,11 +105,11 @@ export const PhotoDate = styled.span`
 export const PhotoLinks = styled.a`
   display: inline-block;
   margin-right: 20px;
-  margin-bottom: 10px;
-  font-size: 12px;
+  margin-bottom: ${spacing.margin};
+  font-size: ${fontSize.small};
   position: relative;
   text-decoration: none;
-  color: rebeccapurple;
+  color: ${color.text01};
 
   @media (min-width: 800px) {
     order: auto;
@@ -120,7 +127,7 @@ export const PhotoLinks = styled.a`
     &:before {
       content: "";
       position: absolute;
-      background: rebeccapurple;
+      background: ${color.text03};
       width: 100%;
       max-width: 0;
       height: 1px;
@@ -129,6 +136,7 @@ export const PhotoLinks = styled.a`
       transition: max-width 0.2s ease-in-out;
     }
     &:hover {
+      color: ${color.text03};
       &:before {
         max-width: 100%;
       }

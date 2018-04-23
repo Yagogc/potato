@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { spacing } from "./variables";
 
 const Container = styled.div`
   margin: 0 auto;
-  padding: 10px;
+  padding: ${spacing.padding};
   width: 100%;
 
   @media (min-width: 800px) {
