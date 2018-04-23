@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UI - Header: 1`] = `
+<header
+  className="sc-bwzfXH hjPlhZ"
+/>
+`;
+
+exports[`UI - HeaderLogo: 1`] = `
+<img
+  className="sc-htpNat jjwzsn"
+/>
+`;

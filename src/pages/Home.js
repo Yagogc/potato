@@ -4,7 +4,6 @@ import Item from "../components/Item";
 
 class Home extends Component {
   render() {
-    console.log("home", this.props);
     const { items } = this.props;
     return (
       <main>

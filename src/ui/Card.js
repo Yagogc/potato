@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { PhotoLinks } from "./Photo";
 import { color, spacing, fontSize } from "./variables";
 
 export const Card = styled.article`

@@ -47,7 +47,6 @@ class App extends Component {
       <Router>
         <React.Fragment>
           <Header />
-          {/* <Home items={items} /> */}
           <Switch>
             <Route
               exact
