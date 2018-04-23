@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import fontawesome from "@fortawesome/fontawesome";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import faExternalLinkAlt from "@fortawesome/fontawesome-free-solid/faExternalLinkAlt";
 import faChevronLeft from "@fortawesome/fontawesome-free-solid/faChevronLeft";
 import faTags from "@fortawesome/fontawesome-free-solid/faTags";
@@ -11,7 +10,7 @@ import faTags from "@fortawesome/fontawesome-free-solid/faTags";
 import fetchJsonp from "fetch-jsonp";
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import Photo from "./pages/Photo";
+import Single from "./pages/Single";
 import NotFound from "./pages/NotFound";
 
 fontawesome.library.add(faExternalLinkAlt, faChevronLeft, faTags);
@@ -31,7 +30,6 @@ class App extends Component {
         return response.json();
       })
       .then(function(json) {
-        console.log("parsed json", json.items);
         self.setState({
           items: json.items
         });
@@ -55,7 +53,7 @@ class App extends Component {
             />
             <Route
               path="/photo/:id"
-              component={props => <Photo items={items} {...props} />}
+              component={props => <Single items={items} {...props} />}
             />
             <Route path="*" component={NotFound} />
           </Switch>
