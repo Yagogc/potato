@@ -58,7 +58,7 @@ class App extends Component {
               path="/photo/:id"
               component={props => <Photo items={items} {...props} />}
             />
-            <Route component={NotFound} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </React.Fragment>
       </Router>

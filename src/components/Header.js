@@ -12,7 +12,9 @@ class Header extends Component {
       <HeaderWrapper>
         <Container>
           <HeaderLogo src={logo} alt="logo" />{" "}
-          <HeaderTitle>Potato Gallery</HeaderTitle>
+          <HeaderTitle to="/" role="heading" aria-level="1">
+            Potato Gallery
+          </HeaderTitle>
         </Container>
       </HeaderWrapper>
     );

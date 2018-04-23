@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 import Container from "./Container";
 
 import { spacing, fontSize, color } from "./variables";
+import { Link } from "react-router-dom";
 
 const logoAnim = keyframes`
   0 {
@@ -31,9 +32,10 @@ export const HeaderLogo = styled.img`
   transform-origin: bottom;
 `;
 
-export const HeaderTitle = styled.h1`
+export const HeaderTitle = styled(Link)`
   font-weight: bold;
   font-size: ${fontSize.big};
   max-height: 50px;
   color: ${color.brand01};
+  text-decoration: none;
 `;
